@@ -54,7 +54,8 @@ dependencies {
     //end::securitydependency[]
 
     //tag::velocity[]
-    compile "org.apache.velocity:velocity-engine-core:2.0"
+    compile "io.micronaut:views"
+    runtime "org.apache.velocity:velocity-engine-core:2.0"
     //end::velocity[]
 
     //tag::geb[]
