@@ -17,7 +17,7 @@ class HomeController {
 
     @Get("/") // <3>
     @View("home") // <4>
-    Map<String, Object> index(@Nullable Principal principal) { // <6>
+    Map<String, Object> index(@Nullable Principal principal) { // <5>
         Map<String, Object> data = [:]
         data["loggedIn"] = principal != null
         if (principal) {
