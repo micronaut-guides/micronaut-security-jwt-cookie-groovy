@@ -1,26 +1,15 @@
 micronaut:
   application:
     name: complete
----
 #tag::config[]
+---
 micronaut:
   security:
-    enabled: true # <1>
-    endpoints:
-      login:
-        enabled: true # <2>
-      logout:
-        enabled: true # <3>
+    authentication: bearer
     token:
       jwt:
-        enabled: true # <4>
-        bearer:
-          enabled: false # <5>
-        cookie:
-          enabled: true # <6>
-          loginFailureTargetUrl: /login/authFailed # <7>
         signatures:
           secret:
-            generator:  # <8>
-              secret: pleaseChangeThisSecretForANewOne # <9>
+            generator:
+              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:pleaseChangeThisSecretForANewOne}"'
 #end::config[]
